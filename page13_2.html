@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  background:url("bg222.svg") center/cover no-repeat;
+}
+
+.deck{
+  position:relative;
+  width:100vw;
+  height:100vh;
+}
+
+.wrap{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:30vw;
+  height:18vw;
+}
+
+.card{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:10.6vw;
+  transform:translate(-50%,-50%);
+  transition:transform 0.45s ease;
+}
+
+.card img{
+  width:100%;
+  display:block;
+  transition:transform 0.3s cubic-bezier(.2,1.4,.4,1);
+}
+
+.c1{
+  transform:translate(-50%,-50%) translate(12px,12px);
+  pointer-events:none;
+}
+
+.c2{
+  transform:translate(-50%,-50%) translate(-12px,-12px);
+  pointer-events:none;
+}
+
+.wrap:hover .c1{
+  transform:translate(-50%,-50%) translate(-10.2708vw,0);
+}
+
+.wrap:hover .c2{
+  transform:translate(-50%,-50%) translate(10.2708vw,0);
+}
+
+.wrap:hover .c1 img{
+  transform:translateY(-45px);
+  transition-delay:1.35s;
+}
+
+.wrap:hover .c1{
+  pointer-events:auto;
+  cursor:pointer;
+}
+
+.c1:active{
+  filter:brightness(1.15) drop-shadow(0 0 25px rgba(255,255,255,0.8));
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+  <div class="wrap">
+
+    <a href="page7.html" class="card c1">
+      <img src="card22.svg">
+    </a>
+
+    <div class="card c2">
+      <img src="card223.svg">
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
