@@ -32,17 +32,20 @@ body{
   top:50%;
   width:10.6vw;
   transform:translate(-50%,-50%);
-  transition:transform 0.45s ease;
+  transition:transform 0.45s ease, filter 0.15s ease;
+  cursor:pointer;
+  outline:none;
 }
 
 .card img{
   width:100%;
   display:block;
+  pointer-events:none;
   transition:transform 0.3s cubic-bezier(.2,1.4,.4,1);
 }
 
-.c1{ transform:translate(-50%,-50%) translate(12px,12px); }
-.c2{ transform:translate(-50%,-50%) translate(-12px,-12px); }
+.c1{ transform:translate(-50%,-50%) translate(12px,12px); z-index:1; }
+.c2{ transform:translate(-50%,-50%) translate(-12px,-12px); z-index:2; }
 
 .wrap:hover .c1{
   transform:translate(-50%,-50%) translate(-10.2708vw,0);
@@ -56,20 +59,23 @@ body{
   transform:translateY(-45px);
   transition-delay:1.35s;
 }
+
+.card:focus{
+  filter:brightness(1.12) drop-shadow(0 0 22px rgba(255,255,255,0.7));
+}
 </style>
 </head>
 <body>
 
 <div class="deck">
   <div class="wrap">
-    <div class="card c1"><img src="card22.svg"></div>
-    <div class="card c2"><img src="card223.svg"></div>
+    <div class="card c1" tabindex="0"><img src="card22.svg" alt=""></div>
+    <div class="card c2" tabindex="0"><img src="card223.svg" alt=""></div>
   </div>
 </div>
 
 </body>
 </html>
-
 
 
 
