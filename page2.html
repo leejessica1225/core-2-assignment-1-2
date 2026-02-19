@@ -24,6 +24,10 @@ body{
   width:10.6vw;
   height:auto;
   transform:translate(-50%,-50%);
+  transition:transform 0.35s ease;
+}
+
+.deck:hover .card{
   transition:transform 0.6s ease;
 }
 
@@ -45,18 +49,25 @@ body{
   transform:translate(-50%,-50%) translate(21.0625vw,0);
   transition-delay:0.1s;
 }
+
+.deck:not(:hover) .c1,
+.deck:not(:hover) .c2,
+.deck:not(:hover) .c3{
+  transition-delay:0s;
+}
 </style>
 </head>
 <body>
 
 <div class="deck">
-  <img src="card1.svg" class="card c1">
-  <img src="card2.svg" class="card c2">
-  <img src="card3.svg" class="card c3">
+  <img src="card1.svg" class="card c1" alt="">
+  <img src="card2.svg" class="card c2" alt="">
+  <img src="card3.svg" class="card c3" alt="">
 </div>
 
 </body>
 </html>
+
 
 
 
