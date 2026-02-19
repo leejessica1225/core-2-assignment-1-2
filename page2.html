@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,9 +31,9 @@ body{
   left:50%;
   top:50%;
   width:10.6vw;
-  height:auto;
   transform:translate(-50%,-50%);
   transition:transform 0.45s ease;
+  display:block;
 }
 
 .c1{ transform:translate(-50%,-50%) translate(0,0); transition-delay:0.2s; }
@@ -44,8 +44,13 @@ body{
 .wrap:hover .c2{ transform:translate(-50%,-50%) translate(0,0); }
 .wrap:hover .c3{ transform:translate(-50%,-50%) translate(21.0625vw,0); }
 
+.card img{
+  width:100%;
+  display:block;
+}
+
 .card:active{
-  filter: brightness(1.08) drop-shadow(0 0 18px rgba(255,255,255,0.45));
+  filter:brightness(1.08) drop-shadow(0 0 18px rgba(255,255,255,0.45));
 }
 </style>
 </head>
@@ -53,9 +58,17 @@ body{
 
 <div class="deck">
   <div class="wrap">
-    <img src="card1.svg" class="card c1" alt="">
-    <img src="card2.svg" class="card c2" alt="">
-    <img src="card3.svg" class="card c3" alt="">
+    <a href="page13.html" class="card c1">
+      <img src="card1.svg" alt="">
+    </a>
+
+    <a href="page14.html" class="card c2">
+      <img src="card2.svg" alt="">
+    </a>
+
+    <a href="page15.html" class="card c3">
+      <img src="card3.svg" alt="">
+    </a>
   </div>
 </div>
 
