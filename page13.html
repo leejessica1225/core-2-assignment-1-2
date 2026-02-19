@@ -31,19 +31,15 @@ body{
   left:50%;
   top:50%;
   width:10.6vw;
-  height:auto;
-  transition:transform 0.45s ease, filter 0.15s ease;
-  cursor:pointer;
+  transition:transform 0.45s ease;
 }
 
 .c1{
   transform:translate(-50%,-50%) translate(12px,12px);
-  z-index:1;
 }
 
 .c2{
   transform:translate(-50%,-50%) translate(-12px,-12px);
-  z-index:2;
 }
 
 .wrap:hover .c1{
@@ -51,11 +47,13 @@ body{
 }
 
 .wrap:hover .c2{
-  transform:translate(-50%,-50%) translate(10.2708vw,-20px);
+  transform:translate(-50%,-50%) translate(10.2708vw,0);
+  transition-delay:0s;
 }
 
-.card:active{
-  filter:brightness(1.08) drop-shadow(0 0 18px rgba(255,255,255,0.45));
+.wrap:hover .c2{
+  transition-delay:0.3s;
+  transform:translate(-50%,-50%) translate(10.2708vw,-25px);
 }
 </style>
 </head>
@@ -70,7 +68,6 @@ body{
 
 </body>
 </html>
-
 
 
 
