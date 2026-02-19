@@ -35,6 +35,7 @@ body{
   transition:transform 0.6s ease, filter 0.2s ease;
   cursor:pointer;
   z-index:1;
+  outline:none;
 }
 
 .card img{
@@ -43,7 +44,7 @@ body{
   pointer-events:none;
 }
 
-.card:hover{
+.card:focus{
   z-index:999;
   filter:brightness(1.15) drop-shadow(0 0 25px rgba(255,255,255,0.8));
 }
@@ -69,13 +70,14 @@ body{
 
 <div class="deck">
   <div class="wrap">
-    <div class="card c1"><img src="card3311.svg"></div>
-    <div class="card c2"><img src="card332.svg"></div>
-    <div class="card c3"><img src="card333.svg"></div>
+    <div class="card c1" tabindex="0"><img src="card3311.svg"></div>
+    <div class="card c2" tabindex="0"><img src="card332.svg"></div>
+    <div class="card c3" tabindex="0"><img src="card333.svg"></div>
   </div>
 </div>
 
 </body>
 </html>
+
 
 
