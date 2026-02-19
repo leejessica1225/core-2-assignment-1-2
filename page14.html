@@ -31,11 +31,16 @@ body{
   left:50%;
   top:50%;
   width:10.6vw;
-  height:auto;
   transform:translate(-50%,-50%);
   transition:transform 0.6s ease, filter 0.15s ease;
   cursor:pointer;
   z-index:1;
+}
+
+.card img{
+  width:100%;
+  display:block;
+  pointer-events:none;
 }
 
 .card:hover{
@@ -59,7 +64,7 @@ body{
 }
 
 .card:active{
-  filter:brightness(1.08) drop-shadow(0 0 18px rgba(255,255,255,0.6));
+  filter:brightness(1.15) drop-shadow(0 0 25px rgba(255,255,255,0.8));
 }
 </style>
 </head>
@@ -67,11 +72,14 @@ body{
 
 <div class="deck">
   <div class="wrap">
-    <img src="card3311.svg" class="card c1">
-    <img src="card332.svg" class="card c2">
-    <img src="card333.svg" class="card c3">
+    <div class="card c1"><img src="card3311.svg"></div>
+    <div class="card c2"><img src="card332.svg"></div>
+    <div class="card c3"><img src="card333.svg"></div>
   </div>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
