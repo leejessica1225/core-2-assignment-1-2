@@ -1,119 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
+  body{
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+  }
+  .deck{
+    position:relative;
+    width:100vw;
+    height:100vh;
+  }
+  .card{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:10.6vw;
+    height:auto;
+    transform:translate(-50%,-50%);
+    transition:transform 0.6s ease;
+  }
+  .c1{ transform:translate(-50%,-50%) translate(0px,0px); }
+  .c2{ transform:translate(-50%,-50%) translate(-15px,-15px); }
+  .c3{ transform:translate(-50%,-50%) translate(-30px,-30px); }
 
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background-image:url("bg111.svg");
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:100% auto;
-  background-color:white;
-}
+  .deck:hover .c1{
+    transform:translate(-50%,-50%) translate(calc(200 * (100vw / 1920)), 0px);
+    transition-delay:0s;
+  }
+  .deck:hover .c2{
+    transform:translate(-50%,-50%) translate(0px, 0px);
+    transition-delay:0.1s;
+  }
+  .deck:hover .c3{
+    transform:translate(-50%,-50%) translate(calc(-200 * (100vw / 1920)), 0px);
+    transition-delay:0.2s;
+  }
 
-.deck{
-  position:relative;
-  width:300px;
-  height:300px;
-}
-
-.card{
-  position:absolute;
-  width:11.7vw;
-  height:17.2vw;
-  left:50%;
-  top:50%;
-  border-radius:1.17vw;
-  transform:translate(-50%,-50%);
-  transition:0.5s ease;
-  pointer-events:none;
-}
-
-.deck:hover .card{
-  pointer-events:auto;
-}
-
-.c1,.c4,.c7,.c10{background:#e8dcc6;}
-.c2,.c5,.c8{background:#a3a9a6;}
-.c3,.c6,.c9{background:#2a2f33;}
-
-.c1{transform:translate(-50%,-50%) translate(0,0);}
-.c2{transform:translate(-50%,-50%) translate(-20px,-20px);}
-.c3{transform:translate(-50%,-50%) translate(-40px,-40px);}
-.c4{transform:translate(-50%,-50%) translate(-60px,-60px);}
-.c5{transform:translate(-50%,-50%) translate(-80px,-80px);}
-.c6{transform:translate(-50%,-50%) translate(-100px,-100px);}
-.c7{transform:translate(-50%,-50%) translate(-120px,-120px);}
-.c8{transform:translate(-50%,-50%) translate(-140px,-140px);}
-.c9{transform:translate(-50%,-50%) translate(-160px,-160px);}
-.c10{transform:translate(-50%,-50%) translate(-180px,-180px);}
-
-.deck:hover .c1  {transform:translate(-50%,-50%) translate(270px,0);}
-.deck:hover .c2  {transform:translate(-50%,-50%) translate(210px,0);}
-.deck:hover .c3  {transform:translate(-50%,-50%) translate(150px,0);}
-.deck:hover .c4  {transform:translate(-50%,-50%) translate(90px,0);}
-.deck:hover .c5  {transform:translate(-50%,-50%) translate(30px,0);}
-.deck:hover .c6  {transform:translate(-50%,-50%) translate(-30px,0);}
-.deck:hover .c7  {transform:translate(-50%,-50%) translate(-90px,0);}
-.deck:hover .c8  {transform:translate(-50%,-50%) translate(-150px,0);}
-.deck:hover .c9  {transform:translate(-50%,-50%) translate(-210px,0);}
-.deck:hover .c10 {transform:translate(-50%,-50%) translate(-270px,0);}
-
+  @media (max-width: 600px){
+    .card{ width:160px; }
+  }
 </style>
 </head>
-
 <body>
-
-<div class="deck">
-  <div class="card c1"></div>
-  <div class="card c2"></div>
-  <div class="card c3"></div>
-  <div class="card c4"></div>
-  <div class="card c5"></div>
-  <div class="card c6"></div>
-  <div class="card c7"></div>
-  <div class="card c8"></div>
-  <div class="card c9"></div>
-  <div class="card c10"></div>
-</div>
-
-<script>
-var pages = [
-  "page3.html",
-  "page4.html",
-  "page5.html",
-  "page6.html",
-  "page7.html",
-  "page8.html",
-  "page9.html",
-  "page10.html",
-  "page11.html",
-  "page12.html"
-];
-
-pages.sort(function(){
-  return Math.random() - 0.5;
-});
-
-var cards = document.querySelectorAll(".card");
-
-for(var i=0; i<cards.length; i++){
-  cards[i].dataset.link = pages[i];
-  cards[i].onclick = function(){
-    window.location.href = this.dataset.link;
-  };
-}
-</script>
-
+  <div class="deck">
+    <img src="card1.svg" class="card c1" alt="">
+    <img src="card2.svg" class="card c2" alt="">
+    <img src="card3.svg" class="card c3" alt="">
+  </div>
 </body>
 </html>
-
 
 
