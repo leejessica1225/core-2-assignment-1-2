@@ -31,29 +31,32 @@ body{
   left:50%;
   top:50%;
   width:10.6vw;
+  transform:translate(-50%,-50%);
   transition:transform 0.45s ease;
 }
 
-.c1{
-  transform:translate(-50%,-50%) translate(12px,12px);
+.card img{
+  width:100%;
+  display:block;
+  transition:transform 0.3s ease;
 }
 
-.c2{
-  transform:translate(-50%,-50%) translate(-12px,-12px);
-}
+/* 처음 겹친 상태 */
+.c1{ transform:translate(-50%,-50%) translate(12px,12px); }
+.c2{ transform:translate(-50%,-50%) translate(-12px,-12px); }
 
+/* 1단계: 펼쳐짐 */
 .wrap:hover .c1{
   transform:translate(-50%,-50%) translate(-10.2708vw,0);
 }
 
 .wrap:hover .c2{
   transform:translate(-50%,-50%) translate(10.2708vw,0);
-  transition-delay:0s;
 }
 
-.wrap:hover .c2{
-  transition-delay:0.3s;
-  transform:translate(-50%,-50%) translate(10.2708vw,-25px);
+.wrap:hover .c2 img{
+  transform:translateY(-25px);
+  transition-delay:0.45s;   
 }
 </style>
 </head>
@@ -61,13 +64,19 @@ body{
 
 <div class="deck">
   <div class="wrap">
-    <img src="card22.svg" class="card c1">
-    <img src="card223.svg" class="card c2">
+    <div class="card c1">
+      <img src="card22.svg">
+    </div>
+
+    <div class="card c2">
+      <img src="card223.svg">
+    </div>
   </div>
 </div>
 
 </body>
 </html>
+
 
 
 
